@@ -49,7 +49,7 @@ if not does_database_exist():
 
 if does_database_exist():
     user_input = st.text_area('Type in your question below and then click the Submit button.')
-    if st.button("Submit"):
+    if st.button("Submit", help='Please click Submit again if you want me to generate the answer again.'):
         if user_input:
             with st.spinner("Please wait, looking for the best answer."):
                 returned_answer = aa_service.retrieve_data(user_input)
