@@ -63,7 +63,7 @@ class Architect_service:
         vectordb = Chroma(persist_directory=db_directory, embedding_function=embedding)
 
         print(f"retrieve_data() after creating vectordb ")
-        retriever = vectordb.as_retriever(search_kwargs={"k": 4})
+        retriever = vectordb.as_retriever(search_kwargs={"k": 3})
         print(f"retrieve_data() after as_retriever() ")
 
         # create the chain to answer questions
