@@ -44,7 +44,7 @@ if not does_database_exist():
         with open(os.path.join(data_directory, uploaded_file.name), "wb") as f:
             f.write(uploaded_file.getbuffer())
 
-        with st.spinner('Please wait, while I read and learn the document ..'):
+        with st.spinner('Please wait, I am thinking of the best way to answer your question...'):
             aa_service.load_files_to_db()
 
 if does_database_exist():
