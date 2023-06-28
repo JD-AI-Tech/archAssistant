@@ -57,6 +57,8 @@ class Architect_service:
 
     def retrieve_data(self, query):
         print(f"retrieve_data() query = {query}")
+        modified_query = query + " If there are numbered or bulleted items in the source text please include the same numbered or bulleted items in the response, one numbered item per row"
+
         db_directory = "db"
         embedding = OpenAIEmbeddings()
         print(f"retrieve_data() after OpenAIEmbeddings() ")
@@ -70,7 +72,7 @@ class Architect_service:
         qa_chain = RetrievalQA.from_chain_type(llm=OpenAI(),
                                                chain_type="stuff",
                                                retriever=retriever)
-        lms_response = qa_chain(query)
+        lms_response = qa_chain(modified_query)
         answer = lms_response["result"]
         return answer
 
