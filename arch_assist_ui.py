@@ -44,14 +44,14 @@ if not does_database_exist():
         with open(os.path.join(data_directory, uploaded_file.name), "wb") as f:
             f.write(uploaded_file.getbuffer())
 
-        with st.spinner('Please wait, I am thinking of the best way to answer your question......'):
+        with st.spinner('Please wait, while I read and learn the document ..'):
             aa_service.load_files_to_db()
 
 if does_database_exist():
     user_input = st.text_area('Type in your question below and then click the Submit button.')
-    if st.button("Submit", help='Please click Submit again if you want me to generate the answer again.'):
+    if st.button("Submit", help='Please click Submit again, if you want me to generate another explanation.'):
         if user_input:
-            with st.spinner("Please wait, looking for the best answer."):
+            with st.spinner("Please wait, I am thinking of the best way to answer your question."):
                 returned_answer = aa_service.retrieve_data(user_input)
                 print(f"docs = {returned_answer} ")
                 st.write(returned_answer)
