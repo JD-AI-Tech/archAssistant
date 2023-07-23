@@ -10,13 +10,13 @@ data_directory = 'data'
 # set up needed folders
 aa_service.setup_folders()
 
-st.title("Architect AI Assistant")
+st.title("PDF AI Assistant")
 st.subheader("Please let me know how I can help you.")
 
 with st.sidebar:
     st.title('About')
     st.markdown('''
-        The goal of the Architect AI Assistant is to provide a way
+        The goal of the PDF AI Assistant is to provide a way
         for users to use natural language by typing their questions.
         
         -The Assistant will then use OpenAi's GPT-3.5 large language model to
